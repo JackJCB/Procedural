@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510299e60b7908c49b8208375e7a941d, type: 3}
   m_Name: Shape
   m_EditorClassIdentifier: 
-  planetRadius: 3
+  planetRadius: 22.01

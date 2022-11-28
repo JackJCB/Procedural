@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Terrain_Face : MonoBehaviour
+public class Terrain_Face 
 {
     Shape_Generator shapeGenerator;
     Mesh mesh;

@@ -6,18 +6,18 @@ public class Planet : MonoBehaviour
 {
     [Range(2,256)]
     public int resolution = 10;
+    public bool autoUpdate = true;
     public Shape_Settings shapeSettings;
     public Colour_Settings colourSettings;
+    [HideInInspector] public bool shapeSettingsFoldout;
+    [HideInInspector] public bool colourSettingsFoldout;
 
     Shape_Generator shapeGenerator;
 
     [SerializeField, HideInInspector] MeshFilter[] meshFilters;
     Terrain_Face[] terrainFaces;
 
-    private void OnValidate()
-    {
-        GeneratePlanet();
-    }
+  
 
     void Initialize()
     {
@@ -54,15 +54,23 @@ public class Planet : MonoBehaviour
         GenerateMesh();
         GenerateColours();
     }
-    public void ShapeSettingsUpdated()
+    public void OnShapeSettingsUpdated()
     {
-        Initialize();
-        GenerateMesh();
+        if (autoUpdate)
+        {
+            Initialize();
+            GenerateMesh();
+        }
+        
     }
     public void OnColourSettingsUpdated()
     {
-        Initialize();
-        GenerateColours();
+        if (autoUpdate)
+        {
+            Initialize();
+            GenerateColours();
+        }
+    
     }
     void GenerateMesh()
     {

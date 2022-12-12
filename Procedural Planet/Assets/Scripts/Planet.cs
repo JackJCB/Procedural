@@ -48,6 +48,13 @@ public class Planet : MonoBehaviour
             terrainFaces[i] = new Terrain_Face(shapeGenerator, meshFilters[i].sharedMesh, resolution, directions[i]);
         }
     }
+    public void RandomGenerate()
+    {
+        Initialize();
+        GenerateColours();
+        GenerateMesh();
+    }
+
     public void GeneratePlanet()
     {
         Initialize();

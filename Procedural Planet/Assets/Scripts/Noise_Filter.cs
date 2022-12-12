@@ -2,21 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Noise_Filter 
+public class Noise_Filter : iNoise_Filter
 {
-    Noise_Settings settings;
+    Noise_Settings.SimpleNoiseSettings settings;
     Noise noise = new Noise();
-    private Noise_Filter noiseSettings;
+    
 
-    public Noise_Filter(Noise_Settings settings)
+    public Noise_Filter(Noise_Settings.SimpleNoiseSettings settings)
     {
         this.settings = settings;
     }
 
-    public Noise_Filter(Noise_Filter noiseSettings)
-    {
-        this.noiseSettings = noiseSettings;
-    }
+    
 
     public float Evaluate(Vector3 point)
     {
